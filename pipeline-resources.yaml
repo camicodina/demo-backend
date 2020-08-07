@@ -1,0 +1,20 @@
+---
+apiVersion: tekton.dev/vlalphal
+kind: PipelineResource
+metadata:
+  name: quote-backend-git
+spec:
+  type: git
+  params:
+    - name: url
+      value: https://github.com/camicodina/quote-backend-demo-cpapps
+---
+apiVersion: tekton.dev/vlalphal
+kind: PipelineResource
+metadata:
+  name: quote-frontend-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: image-registry.openshift-image-registry.svc:5000/demo-quote-backend/quote-backend:tkn
